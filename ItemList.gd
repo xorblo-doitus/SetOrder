@@ -15,7 +15,7 @@ func _ready():
 	_save.connect("pressed", self, "_onSave")
 	_read()
 	for key in _data:
-		if key != "" and key != "header":
+		if key.is_valid_integer():
 			add_item(key + " " + _data[key]["name"])
 
 func _input(event):
